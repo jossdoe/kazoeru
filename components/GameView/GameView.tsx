@@ -1,4 +1,5 @@
 import React from 'react'
+import { addPeriodSeperator } from '../../utils/addPeriodSeperator'
 import type { View } from '../../utils/usePlay'
 
 type EnterViewProps = {
@@ -47,7 +48,9 @@ function GameView({
   return (
     <main>
       <form onSubmit={onSubmitHandler}>
-        <h1 className="text-4xl font-bold mb-6">{currentNumber}</h1>
+        <h1 className="text-4xl font-bold mb-6">
+          {addPeriodSeperator(currentNumber)}
+        </h1>
         <label className="block mx-auto text-gray-500 text-sm">
           Enter Hiragana
         </label>
