@@ -6,7 +6,7 @@ import { ViewGame } from "../components/views/ViewGame"
 
 export default function Home() {
   const {
-    currentKana,
+    currentKanas,
     currentNumber,
     inputValue,
     limit,
@@ -29,7 +29,7 @@ export default function Home() {
       )}
       {view !== "start" && (
         <ViewGame
-          currentKana={currentKana}
+          currentKanas={currentKanas}
           currentNumber={currentNumber}
           inputValue={inputValue}
           resetGame={resetGame}

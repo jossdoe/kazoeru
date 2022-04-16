@@ -5,7 +5,7 @@ import { addPeriodSeperator } from "../../../utils/addPeriodSeperator"
 import type { View } from "../../../utils/hooks/usePlay"
 
 type ViewGameProps = {
-  currentKana: string
+  currentKanas: string[]
   currentNumber: number
   inputValue: string
   resetGame: () => void
@@ -16,7 +16,7 @@ type ViewGameProps = {
 }
 
 function ViewGame({
-  currentKana,
+  currentKanas,
   currentNumber,
   inputValue,
   resetGame,
@@ -25,15 +25,14 @@ function ViewGame({
   showResult,
   view,
 }: ViewGameProps) {
-  const isCorrectAnswer = currentKana === inputValue.trim()
+  const isCorrectAnswer = currentKanas.includes(inputValue.trim())
+  const inputState = isCorrectAnswer ? "correct" : "incorrect"
 
   const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     if (view === "enter") showResult()
     if (view === "result") showNextNumber()
   }
-
-  const inputState = isCorrectAnswer ? "correct" : "incorrect"
 
   return (
     <form className="text-center" onSubmit={onSubmitHandler}>
@@ -54,7 +53,7 @@ function ViewGame({
           {!isCorrectAnswer && (
             <div className="mb-6">
               <div className="mb-2 font-bold">Incorrect!</div>
-              <div>{currentKana}</div>
+              <div>{currentKanas[0]}</div>
             </div>
           )}
           <div className="mt-2">
