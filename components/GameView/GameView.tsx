@@ -35,7 +35,7 @@ function GameView({
     'bg-gray-700 text-gray-50 py-4 px-6 rounded-lg shadow-md mt-4'
 
   const inputClassesDefault =
-    'block mx-auto w-96 bg-white text-center p-4 rounded-md mb-6'
+    'block mx-auto w-full bg-white text-center p-4 rounded-md mb-6'
 
   const inputClassesCorrect =
     isCorrectAnswer && view === 'result' ? 'bg-green-400 text-green-50' : ''
