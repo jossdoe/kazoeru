@@ -2,7 +2,7 @@ import React from "react"
 import { Button } from "../../forms/Button"
 import { InputText } from "../../forms/InputText"
 import { addPeriodSeperator } from "../../../utils/addPeriodSeperator"
-import type { View } from "../../../utils/usePlay"
+import type { View } from "../../../utils/hooks/usePlay"
 
 type ViewGameProps = {
   currentKana: string

@@ -1,6 +1,6 @@
 import React from "react"
 import { LayoutDefault } from "../components/layouts/LayoutDefault"
-import { usePlay } from "../utils/usePlay"
+import { usePlay } from "../utils/hooks/usePlay"
 import { ViewStart } from "../components/views/ViewStart"
 import { ViewGame } from "../components/views/ViewGame"
 

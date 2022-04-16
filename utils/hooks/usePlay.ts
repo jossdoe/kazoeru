@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { translateNumber } from './translateNumber'
+import { translateNumber } from '../translations/translateNumber'
 
 export type View = 'start' | 'enter' | 'result'
 

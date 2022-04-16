@@ -52,7 +52,7 @@ const thousands = {
 
 function translateOneDigit(
   inputString: string,
-  isZeroOmitted?: boolean
+  isZeroOmitted: boolean
 ): string {
   const inputNumber = parseInt(inputString)
 
