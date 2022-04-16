@@ -1,5 +1,6 @@
 import React from "react"
 import { SecondaryButton } from "../../forms/Button"
+import { InputText } from "../../forms/InputText"
 import { addPeriodSeperator } from "../../../utils/addPeriodSeperator"
 import type { View } from "../../../utils/usePlay"
 
@@ -32,16 +33,7 @@ function ViewGame({
     if (view === "result") showNextNumber()
   }
 
-  const inputClassesDefault =
-    "block mx-auto w-full bg-white text-center p-4 rounded-md mb-6"
-
-  const inputClassesCorrect =
-    isCorrectAnswer && view === "result" ? "bg-green-400 text-green-50" : ""
-
-  const inputClassesIncorrect =
-    !isCorrectAnswer && view === "result" ? "bg-red-400 text-white" : ""
-
-  const inputClasses = `${inputClassesDefault} ${inputClassesCorrect} ${inputClassesIncorrect}`
+  const inputState = isCorrectAnswer ? "correct" : "incorrect"
 
   return (
     <form className="text-center" onSubmit={onSubmitHandler}>
@@ -51,15 +43,13 @@ function ViewGame({
       <label className="block mx-auto text-gray-500 text-sm">
         Enter Hiragana
       </label>
-      <input
-        className={inputClasses}
+      <InputText
+        state={view === "result" ? inputState : "default"}
         value={inputValue}
         onChange={(event) => setInputValue(event.currentTarget.value)}
         autoFocus
       />
-      {view === "enter" && (
-        <SecondaryButton>Show Result</SecondaryButton>
-      )}
+      {view === "enter" && <SecondaryButton>Show Result</SecondaryButton>}
       {view === "result" && (
         <>
           {isCorrectAnswer && <div className="mb-2 font-bold">Correct!</div>}
