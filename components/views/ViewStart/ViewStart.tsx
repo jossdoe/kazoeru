@@ -1,5 +1,5 @@
 import React from "react"
-import { PrimaryButton } from "../../forms/Button"
+import { Button } from "../../forms/Button"
 import { addPeriodSeperator } from "../../../utils/addPeriodSeperator"
 
 type ViewStartProps = {
@@ -31,7 +31,7 @@ function ViewStart({ limit, setLimit, showNextNumber }: ViewStartProps) {
         </div>
       </div>
       <div className="text-center">
-        <PrimaryButton onClick={() => showNextNumber()}>Go</PrimaryButton>
+        <Button variant="primary" onClick={() => showNextNumber()}>Go</Button>
       </div>
     </>
   )

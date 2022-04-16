@@ -1,8 +1,8 @@
 import React from "react"
 
-interface PrimaryButtonProps extends React.ComponentPropsWithoutRef<"button"> {}
+interface ButtonPrimaryProps extends React.ComponentPropsWithoutRef<"button"> {}
 
-function PrimaryButton(props: PrimaryButtonProps) {
+function ButtonPrimary(props: ButtonPrimaryProps) {
   const { className, ...rest } = props
 
   return (
@@ -13,4 +13,4 @@ function PrimaryButton(props: PrimaryButtonProps) {
   )
 }
 
-export { PrimaryButton }
+export { ButtonPrimary }

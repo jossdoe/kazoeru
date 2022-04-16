@@ -1,9 +1,9 @@
 import React from "react"
 
-interface SecondaryButtonProps
+interface ButtonSecondaryProps
   extends React.ComponentPropsWithoutRef<"button"> {}
 
-function SecondaryButton(props: SecondaryButtonProps) {
+function ButtonSecondary(props: ButtonSecondaryProps) {
   const { className, ...rest } = props
 
   return (
@@ -14,4 +14,4 @@ function SecondaryButton(props: SecondaryButtonProps) {
   )
 }
 
-export { SecondaryButton }
+export { ButtonSecondary }

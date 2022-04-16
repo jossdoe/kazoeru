@@ -1,5 +1,5 @@
 import React from "react"
-import { SecondaryButton } from "../../forms/Button"
+import { Button } from "../../forms/Button"
 import { InputText } from "../../forms/InputText"
 import { addPeriodSeperator } from "../../../utils/addPeriodSeperator"
 import type { View } from "../../../utils/usePlay"
@@ -49,7 +49,7 @@ function ViewGame({
         onChange={(event) => setInputValue(event.currentTarget.value)}
         autoFocus
       />
-      {view === "enter" && <SecondaryButton>Show Result</SecondaryButton>}
+      {view === "enter" && <Button variant="secondary">Show Result</Button>}
       {view === "result" && (
         <>
           {isCorrectAnswer && <div className="mb-2 font-bold">Correct!</div>}
@@ -59,12 +59,12 @@ function ViewGame({
               <div className="">{currentKana}</div>
             </div>
           )}
-          <SecondaryButton className="mr-6 mt-2" onClick={resetGame}>
+          <Button variant="secondary" className="mr-6 mt-2" onClick={resetGame}>
             Back
-          </SecondaryButton>
-          <SecondaryButton className="mt-2" onClick={showNextNumber}>
+          </Button>
+          <Button variant="secondary" className="mt-2" onClick={showNextNumber}>
             Next
-          </SecondaryButton>
+          </Button>
         </>
       )}
     </form>
