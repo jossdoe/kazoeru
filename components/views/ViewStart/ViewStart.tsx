@@ -1,14 +1,14 @@
 import React from "react"
-import { PrimaryButton } from "../Button"
-import { addPeriodSeperator } from "../../utils/addPeriodSeperator"
+import { PrimaryButton } from "../../forms/Button"
+import { addPeriodSeperator } from "../../../utils/addPeriodSeperator"
 
-type StartViewProps = {
+type ViewStartProps = {
   limit: number
   setLimit: (limit: number) => void
   showNextNumber: () => void
 }
 
-function StartView({ limit, setLimit, showNextNumber }: StartViewProps) {
+function ViewStart({ limit, setLimit, showNextNumber }: ViewStartProps) {
   return (
     <>
       <div className="block mx-auto font-bold mb-6 text-center">
@@ -37,4 +37,4 @@ function StartView({ limit, setLimit, showNextNumber }: StartViewProps) {
   )
 }
 
-export { StartView }
+export { ViewStart }

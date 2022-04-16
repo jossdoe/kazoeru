@@ -1,9 +1,9 @@
 import React from "react"
-import { SecondaryButton } from "../Button"
-import { addPeriodSeperator } from "../../utils/addPeriodSeperator"
-import type { View } from "../../utils/usePlay"
+import { SecondaryButton } from "../../forms/Button"
+import { addPeriodSeperator } from "../../../utils/addPeriodSeperator"
+import type { View } from "../../../utils/usePlay"
 
-type EnterViewProps = {
+type ViewGameProps = {
   currentKana: string
   currentNumber: number
   inputValue: string
@@ -14,7 +14,7 @@ type EnterViewProps = {
   view: View
 }
 
-function GameView({
+function ViewGame({
   currentKana,
   currentNumber,
   inputValue,
@@ -23,7 +23,7 @@ function GameView({
   showNextNumber,
   showResult,
   view,
-}: EnterViewProps) {
+}: ViewGameProps) {
   const isCorrectAnswer = currentKana === inputValue.trim()
 
   const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
@@ -81,4 +81,4 @@ function GameView({
   )
 }
 
-export { GameView }
+export { ViewGame }

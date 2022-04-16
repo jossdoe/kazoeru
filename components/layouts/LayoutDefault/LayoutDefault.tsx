@@ -1,11 +1,11 @@
 import React from "react"
 import Head from "next/head"
 
-type LayoutProps = {
+type LayoutDefaultProps = {
   title: string
 }
 
-const Layout: React.FC<LayoutProps> = ({ title, children }) => {
+const LayoutDefault: React.FC<LayoutDefaultProps> = ({ title, children }) => {
   return (
     <div className="bg-gray-100 min-h-screen">
       <div className="text-gray-700">
@@ -35,4 +35,4 @@ const Layout: React.FC<LayoutProps> = ({ title, children }) => {
   )
 }
 
-export { Layout }
+export { LayoutDefault }

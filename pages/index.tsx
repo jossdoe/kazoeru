@@ -1,8 +1,8 @@
 import React from "react"
-import { Layout } from "../components/Layout"
+import { LayoutDefault } from "../components/layouts/LayoutDefault"
 import { usePlay } from "../utils/usePlay"
-import { StartView } from "../components/StartView"
-import { GameView } from "../components/GameView"
+import { ViewStart } from "../components/views/ViewStart"
+import { ViewGame } from "../components/views/ViewGame"
 
 export default function Home() {
   const {
@@ -19,16 +19,16 @@ export default function Home() {
   } = usePlay()
 
   return (
-    <Layout title="数える">
+    <LayoutDefault title="数える">
       {view === "start" && (
-        <StartView
+        <ViewStart
           limit={limit}
           setLimit={setLimit}
           showNextNumber={showNextNumber}
         />
       )}
       {view !== "start" && (
-        <GameView
+        <ViewGame
           currentKana={currentKana}
           currentNumber={currentNumber}
           inputValue={inputValue}
@@ -39,6 +39,6 @@ export default function Home() {
           view={view}
         />
       )}
-    </Layout>
+    </LayoutDefault>
   )
 }
