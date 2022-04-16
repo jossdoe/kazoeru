@@ -1,6 +1,7 @@
-import React from 'react'
-import { addPeriodSeperator } from '../../utils/addPeriodSeperator'
-import type { View } from '../../utils/usePlay'
+import React from "react"
+import { SecondaryButton } from "../Button"
+import { addPeriodSeperator } from "../../utils/addPeriodSeperator"
+import type { View } from "../../utils/usePlay"
 
 type EnterViewProps = {
   currentKana: string
@@ -27,67 +28,56 @@ function GameView({
 
   const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    if (view === 'enter') showResult()
-    if (view === 'result') showNextNumber()
+    if (view === "enter") showResult()
+    if (view === "result") showNextNumber()
   }
 
-  const buttonClasses =
-    'bg-gray-700 text-gray-50 py-4 px-6 rounded-lg shadow-md mt-4'
-
   const inputClassesDefault =
-    'block mx-auto w-full bg-white text-center p-4 rounded-md mb-6'
+    "block mx-auto w-full bg-white text-center p-4 rounded-md mb-6"
 
   const inputClassesCorrect =
-    isCorrectAnswer && view === 'result' ? 'bg-green-400 text-green-50' : ''
+    isCorrectAnswer && view === "result" ? "bg-green-400 text-green-50" : ""
 
   const inputClassesIncorrect =
-    !isCorrectAnswer && view === 'result' ? 'bg-red-400 text-white' : ''
+    !isCorrectAnswer && view === "result" ? "bg-red-400 text-white" : ""
 
   const inputClasses = `${inputClassesDefault} ${inputClassesCorrect} ${inputClassesIncorrect}`
 
   return (
-    <main>
-      <form onSubmit={onSubmitHandler}>
-        <h1 className="text-4xl font-bold mb-6">
-          {addPeriodSeperator(currentNumber)}
-        </h1>
-        <label className="block mx-auto text-gray-500 text-sm">
-          Enter Hiragana
-        </label>
-        <input
-          className={inputClasses}
-          value={inputValue}
-          onChange={(event) => setInputValue(event.currentTarget.value)}
-          autoFocus
-        />
-        {view === 'enter' && (
-          <button className={buttonClasses}>Show Result</button>
-        )}
-        {view === 'result' && (
-          <>
-            {isCorrectAnswer && <div className="mb-2 font-bold">Correct!</div>}
-            {!isCorrectAnswer && (
-              <div className="mb-6">
-                <div className="mb-2 font-bold">Incorrect!</div>
-                <div className="">{currentKana}</div>
-              </div>
-            )}
-            <button
-              className={buttonClasses + ' mr-6 mt-2'}
-              onClick={resetGame}
-            >
-              Back
-            </button>
-            <button
-              className={buttonClasses + ' mt-2'}
-              onClick={showNextNumber}
-            >
-              Next
-            </button>
-          </>
-        )}
-      </form>
-    </main>
+    <form className="text-center" onSubmit={onSubmitHandler}>
+      <h1 className="text-4xl font-bold mb-6">
+        {addPeriodSeperator(currentNumber)}
+      </h1>
+      <label className="block mx-auto text-gray-500 text-sm">
+        Enter Hiragana
+      </label>
+      <input
+        className={inputClasses}
+        value={inputValue}
+        onChange={(event) => setInputValue(event.currentTarget.value)}
+        autoFocus
+      />
+      {view === "enter" && (
+        <SecondaryButton>Show Result</SecondaryButton>
+      )}
+      {view === "result" && (
+        <>
+          {isCorrectAnswer && <div className="mb-2 font-bold">Correct!</div>}
+          {!isCorrectAnswer && (
+            <div className="mb-6">
+              <div className="mb-2 font-bold">Incorrect!</div>
+              <div className="">{currentKana}</div>
+            </div>
+          )}
+          <SecondaryButton className="mr-6 mt-2" onClick={resetGame}>
+            Back
+          </SecondaryButton>
+          <SecondaryButton className="mt-2" onClick={showNextNumber}>
+            Next
+          </SecondaryButton>
+        </>
+      )}
+    </form>
   )
 }
 
