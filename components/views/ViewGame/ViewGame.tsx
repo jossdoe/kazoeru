@@ -44,7 +44,8 @@ function ViewGame({
         state={view === "result" ? inputState : "default"}
         value={inputValue}
         onChange={(event) => setInputValue(event.currentTarget.value)}
-        autoFocus
+        autoFocus={view === "enter"}
+        readOnly={view === "result"}
       />
       {view === "enter" && <Button variant="secondary">Show Result</Button>}
       {view === "result" && (
