@@ -37,13 +37,11 @@ function ViewGame({
 
   return (
     <form className="text-center" onSubmit={onSubmitHandler}>
-      <h1 className="text-4xl font-bold mb-6">
+      <h2 className="text-4xl font-bold mb-6">
         {addPeriodSeperator(currentNumber)}
-      </h1>
-      <label className="block mx-auto text-gray-500 text-sm">
-        Enter Hiragana
-      </label>
+      </h2>
       <InputText
+        label="Enter Hiragana"
         state={view === "result" ? inputState : "default"}
         value={inputValue}
         onChange={(event) => setInputValue(event.currentTarget.value)}
@@ -56,15 +54,17 @@ function ViewGame({
           {!isCorrectAnswer && (
             <div className="mb-6">
               <div className="mb-2 font-bold">Incorrect!</div>
-              <div className="">{currentKana}</div>
+              <div>{currentKana}</div>
             </div>
           )}
-          <Button variant="secondary" className="mr-6 mt-2" onClick={resetGame}>
-            Back
-          </Button>
-          <Button variant="secondary" className="mt-2" onClick={showNextNumber}>
-            Next
-          </Button>
+          <div className="mt-2">
+            <Button variant="secondary" className="mr-6" onClick={resetGame}>
+              Back
+            </Button>
+            <Button variant="secondary" onClick={showNextNumber}>
+              Next
+            </Button>
+          </div>
         </>
       )}
     </form>
