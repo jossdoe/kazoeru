@@ -42,7 +42,7 @@ export default function Home() {
     <LayoutDefault title="数える">
       <div className="block font-bold text-center">Choose Mode</div>
       <div className="text-gray-500 p-8">
-        Quiz youself on Japanese number readings. Select a mode and make sure to
+        Quiz yourself on Japanese number readings. Select a mode and make sure to
         enter your answers in <span className="whitespace-nowrap">ひらがな</span>.
       </div>
       {links.map((link) => (
