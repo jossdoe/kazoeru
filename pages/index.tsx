@@ -1,20 +1,25 @@
 import React from "react"
 import Link from "next/link"
 import { LayoutDefault } from "../components/layouts/LayoutDefault"
+import { HiOutlineHashtag, HiOutlineCalendar, HiArrowCircleRight } from "react-icons/hi"
+import { IconType } from "react-icons"
 
 type LinkType = {
   url: string
   title: string
+  Icon: IconType
 }
 
 const links: LinkType[] = [
   {
     url: "/pure",
     title: "Pure Numbers",
+    Icon: HiOutlineHashtag,
   },
   {
     url: "/dates",
     title: "Dates",
+    Icon: HiOutlineCalendar,
   },
   // {
   //   url: "/time",
@@ -29,8 +34,12 @@ export default function Home() {
       {links.map((link) => (
         <Link key={link.url} href={link.url}>
           <a>
-            <div className="bg-white text-left py-4 px-8 rounded-md shadow-md mb-4">
-              {link.title}
+            <div className="flex items-center bg-white py-4 px-8 rounded-md shadow-md mb-4">
+              <div className="mr-2">
+                <link.Icon />
+              </div>
+              <div className="flex-1 text-left">{link.title}</div>
+              <div className="text-gray-600"><HiArrowCircleRight/></div>
             </div>
           </a>
         </Link>
