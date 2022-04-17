@@ -23,7 +23,7 @@ function ViewPureStart({ limit, setLimit, showNextNumber }: ViewPureStartProps) 
                 type="radio"
                 value={num}
                 checked={num === limit}
-                onClick={() => setLimit(num)}
+                onChange={() => setLimit(num)}
               />
               <span>{addPeriodSeperator(num)}</span>
             </label>
