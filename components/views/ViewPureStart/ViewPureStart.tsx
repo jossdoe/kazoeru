@@ -2,13 +2,13 @@ import React from "react"
 import { Button } from "../../forms/Button"
 import { addPeriodSeperator } from "../../../utils/addPeriodSeperator"
 
-type ViewStartProps = {
+type ViewPureStartProps = {
   limit: number
   setLimit: (limit: number) => void
   showNextNumber: () => void
 }
 
-function ViewStart({ limit, setLimit, showNextNumber }: ViewStartProps) {
+function ViewPureStart({ limit, setLimit, showNextNumber }: ViewPureStartProps) {
   return (
     <>
       <div className="block mx-auto font-bold mb-6 text-center">
@@ -37,4 +37,4 @@ function ViewStart({ limit, setLimit, showNextNumber }: ViewStartProps) {
   )
 }
 
-export { ViewStart }
+export { ViewPureStart }

@@ -1,8 +1,8 @@
 import React from "react"
 import { LayoutDefault } from "../components/layouts/LayoutDefault"
-import { usePlay } from "../utils/hooks/usePlay"
-import { ViewStart } from "../components/views/ViewStart"
-import { ViewGame } from "../components/views/ViewGame"
+import { usePlayPure } from "../utils/hooks/usePlayPure"
+import { ViewPureStart } from "../components/views/ViewPureStart"
+import { ViewPureGame } from "../components/views/ViewPureGame"
 
 export default function Pure() {
   const {
@@ -16,19 +16,19 @@ export default function Pure() {
     showNextNumber,
     showResult,
     view,
-  } = usePlay()
+  } = usePlayPure()
 
   return (
     <LayoutDefault title="数える" hasBackToIndex>
       {view === "start" && (
-        <ViewStart
+        <ViewPureStart
           limit={limit}
           setLimit={setLimit}
           showNextNumber={showNextNumber}
         />
       )}
       {view !== "start" && (
-        <ViewGame
+        <ViewPureGame
           currentKanas={currentKanas}
           currentNumber={currentNumber}
           inputValue={inputValue}

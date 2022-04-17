@@ -2,9 +2,9 @@ import React from "react"
 import { Button } from "../../forms/Button"
 import { InputText } from "../../forms/InputText"
 import { addPeriodSeperator } from "../../../utils/addPeriodSeperator"
-import type { View } from "../../../utils/hooks/usePlay"
+import type { View } from "../../../utils/hooks/usePlayPure"
 
-type ViewGameProps = {
+type ViewPureGameProps = {
   currentKanas: string[]
   currentNumber: number
   inputValue: string
@@ -15,7 +15,7 @@ type ViewGameProps = {
   view: View
 }
 
-function ViewGame({
+function ViewPureGame({
   currentKanas,
   currentNumber,
   inputValue,
@@ -24,7 +24,7 @@ function ViewGame({
   showNextNumber,
   showResult,
   view,
-}: ViewGameProps) {
+}: ViewPureGameProps) {
   const isCorrectAnswer = currentKanas.includes(inputValue.trim())
   const inputState = isCorrectAnswer ? "correct" : "incorrect"
 
@@ -71,4 +71,4 @@ function ViewGame({
   )
 }
 
-export { ViewGame }
+export { ViewPureGame }

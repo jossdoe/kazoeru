@@ -3,7 +3,7 @@ import { translatePureNumber } from '../translations/translatePureNumber'
 
 export type View = 'start' | 'enter' | 'result'
 
-function usePlay() {
+function usePlayPure() {
   const [view, setView] = useState<View>('start')
   const [currentNumber, setCurrentNumber] = useState<number>(0)
   const [currentKanas, setCurrentKanas] = useState<string[]>([''])
@@ -45,4 +45,4 @@ function usePlay() {
   }
 }
 
-export { usePlay }
+export { usePlayPure }
