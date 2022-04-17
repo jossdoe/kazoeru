@@ -1,7 +1,11 @@
 import React from "react"
 import Link from "next/link"
 import { LayoutDefault } from "../components/layouts/LayoutDefault"
-import { HiOutlineHashtag, HiOutlineCalendar, HiArrowCircleRight } from "react-icons/hi"
+import {
+  HiOutlineHashtag,
+  HiOutlineCalendar,
+  HiArrowCircleRight,
+} from "react-icons/hi"
 import { IconType } from "react-icons"
 
 type LinkType = {
@@ -30,7 +34,11 @@ const links: LinkType[] = [
 export default function Home() {
   return (
     <LayoutDefault title="数える">
-      <div className="block font-bold mb-6 text-center">Choose Mode</div>
+      <div className="block font-bold text-center">Choose Mode</div>
+      <div className="text-gray-500 p-8">
+        Quiz youself on Japanese number readings. Select a mode and make sure to
+        enter your answers in <span className="whitespace-nowrap">ひらがな</span>.
+      </div>
       {links.map((link) => (
         <Link key={link.url} href={link.url}>
           <a>
@@ -39,7 +47,9 @@ export default function Home() {
                 <link.Icon />
               </div>
               <div className="flex-1 text-left">{link.title}</div>
-              <div className="text-gray-600"><HiArrowCircleRight/></div>
+              <div className="text-gray-500">
+                <HiArrowCircleRight />
+              </div>
             </div>
           </a>
         </Link>
