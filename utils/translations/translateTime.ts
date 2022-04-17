@@ -46,7 +46,8 @@ function translateTime({hour, minutes}: TranslateTimeArgs): string[] {
   if (minutes === 30) solutions.push(`${daytime}${hours[reducedHour]}はん`)
   else solutions.push(`${daytime}${hours[reducedHour]}`)
   
-  return solutions
+  // we want to prefer 12 hours over 24 hours
+  return solutions.reverse()
 }
 
 export { translateTime }

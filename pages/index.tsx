@@ -4,6 +4,7 @@ import { LayoutDefault } from "../components/layouts/LayoutDefault"
 import {
   HiOutlineHashtag,
   HiOutlineCalendar,
+  HiOutlineClock,
   HiArrowCircleRight,
 } from "react-icons/hi"
 import { IconType } from "react-icons"
@@ -25,9 +26,14 @@ const links: LinkType[] = [
     title: "Dates",
     Icon: HiOutlineCalendar,
   },
+  {
+    url: "/time",
+    title: "Time",
+    Icon: HiOutlineClock,
+  },
   // {
-  //   url: "/time",
-  //   title: "Time",
+  //   url: "/age",
+  //   title: "Age",
   // },
 ]
 
