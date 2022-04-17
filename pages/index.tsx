@@ -13,13 +13,13 @@ const links: LinkType[] = [
     title: "Pure Numbers",
   },
   {
-    url: "/time",
-    title: "Time",
-  },
-  {
     url: "/dates",
     title: "Dates",
   },
+  // {
+  //   url: "/time",
+  //   title: "Time",
+  // },
 ]
 
 export default function Home() {
