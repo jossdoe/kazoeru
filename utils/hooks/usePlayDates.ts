@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { translateDate } from '../translations/translateDate'
 
-export type View = 'enter' | 'result'
+export type View = 'start' | 'enter' | 'result'
 
 function generateRandomDate() {
   const start = new Date(2020, 0, 1)
@@ -14,7 +14,7 @@ function generateRandomDate() {
 function usePlayDates() {
   const initialDate = generateRandomDate()
 
-  const [view, setView] = useState<View>('enter')
+  const [view, setView] = useState<View>('start')
   const [currentMonth, setCurrentMonth] = useState<number>(initialDate.month)
   const [currentDay, setCurrentDay] = useState<number>(initialDate.day)
   const [currentKana, setCurrentKana] = useState<string>(translateDate(initialDate))

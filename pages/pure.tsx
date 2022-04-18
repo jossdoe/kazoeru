@@ -3,6 +3,8 @@ import { LayoutDefault } from "../components/layouts/LayoutDefault"
 import { usePlayPure } from "../utils/hooks/usePlayPure"
 import { ViewPureStart } from "../components/views/ViewPureStart"
 import { ViewPureGame } from "../components/views/ViewPureGame"
+import { HeadingSub } from "../components/utils/HeadingSub"
+import { ParagraphInfo } from "../components/utils/ParagraphInfo"
 
 export default function Pure() {
   const {
@@ -21,11 +23,17 @@ export default function Pure() {
   return (
     <LayoutDefault title="数える" hasBackToIndex>
       {view === "start" && (
-        <ViewPureStart
-          limit={limit}
-          setLimit={setLimit}
-          showNextNumber={showNextNumber}
-        />
+        <>
+          <HeadingSub>Counting Pure Numbers</HeadingSub>
+          <ParagraphInfo className="p-8">
+            Excercises will state a random number, the solution must be fully typed in hiragana. がんばってください！
+          </ParagraphInfo>
+          <ViewPureStart
+            limit={limit}
+            setLimit={setLimit}
+            showNextNumber={showNextNumber}
+          />
+        </>
       )}
       {view !== "start" && (
         <ViewPureGame

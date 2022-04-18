@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { translateTime } from '../translations/translateTime'
 
-export type View = 'enter' | 'result'
+export type View = 'start' | 'enter' | 'result'
 
 function generateRandomTime() {
   const hour = Math.floor(Math.random() * 24)
@@ -13,7 +13,7 @@ function generateRandomTime() {
 function usePlayTime() {
   const initialTime = generateRandomTime()
 
-  const [view, setView] = useState<View>('enter')
+  const [view, setView] = useState<View>('start')
   const [currentHour, setCurrentHour] = useState<number>(initialTime.hour)
   const [currentMinutes, setCurrentMinutes] = useState<number>(initialTime.minutes)
   const [currentKanas, setCurrentKanas] = useState<string[]>(translateTime(initialTime))

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { translateAge } from '../translations/translateAge'
 
-export type View = 'enter' | 'result'
+export type View = 'start' | 'enter' | 'result'
 
 function generateRandomAge() {
   const age = Math.floor(Math.random() * 99)
@@ -11,7 +11,7 @@ function generateRandomAge() {
 function usePlayAge() {
   const initialAge = generateRandomAge()
 
-  const [view, setView] = useState<View>('enter')
+  const [view, setView] = useState<View>('start')
   const [currentAge, setCurrentAge] = useState<number>(initialAge)
   const [currentKanas, setCurrentKanas] = useState<string[]>(translateAge(initialAge))
   const [inputValue, setInputValue] = useState<string>('')
