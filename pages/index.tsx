@@ -6,6 +6,7 @@ import {
   HiOutlineCalendar,
   HiOutlineClock,
   HiArrowCircleRight,
+  HiOutlineUser
 } from "react-icons/hi"
 import { IconType } from "react-icons"
 
@@ -31,10 +32,11 @@ const links: LinkType[] = [
     title: "Time",
     Icon: HiOutlineClock,
   },
-  // {
-  //   url: "/age",
-  //   title: "Age",
-  // },
+  {
+    url: "/age",
+    title: "Age",
+    Icon: HiOutlineUser,
+  },
 ]
 
 export default function Home() {
