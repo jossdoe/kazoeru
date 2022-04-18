@@ -9,6 +9,7 @@ import {
   HiOutlineUser
 } from "react-icons/hi"
 import { IconType } from "react-icons"
+import { ParagraphInfo } from "../components/utils/ParagraphInfo"
 
 type LinkType = {
   url: string
@@ -43,10 +44,10 @@ export default function Home() {
   return (
     <LayoutDefault title="数える">
       <div className="block font-bold text-center">Choose Mode</div>
-      <div className="text-gray-500 p-8">
+      <ParagraphInfo>
         Quiz yourself on Japanese number readings. Select a mode and make sure to
         enter your answers in <span className="whitespace-nowrap">ひらがな</span>.
-      </div>
+      </ParagraphInfo>
       {links.map((link) => (
         <Link key={link.url} href={link.url}>
           <a>
