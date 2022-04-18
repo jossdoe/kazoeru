@@ -1,11 +1,12 @@
 import React from "react"
 
 type ParagraphInfoProps = {
+  className?: string
   children: React.ReactNode
 }
 
-function ParagraphInfo({ children }: ParagraphInfoProps) {
-  return <div className="text-gray-500 p-8">{children}</div>
+function ParagraphInfo({ children, className }: ParagraphInfoProps) {
+  return <div className={`text-gray-500 ${className}`}>{children}</div>
 }
 
 export { ParagraphInfo }

@@ -6,10 +6,11 @@ import {
   HiOutlineCalendar,
   HiOutlineClock,
   HiArrowCircleRight,
-  HiOutlineUser
+  HiOutlineUser,
 } from "react-icons/hi"
 import { IconType } from "react-icons"
 import { ParagraphInfo } from "../components/utils/ParagraphInfo"
+import { HeadingSub } from "../components/utils/HeadingSub"
 
 type LinkType = {
   url: string
@@ -43,11 +44,12 @@ const links: LinkType[] = [
 export default function Home() {
   return (
     <LayoutDefault title="数える">
-      <div className="block font-bold text-center">Choose Mode</div>
-      <ParagraphInfo>
-        Quiz yourself on Japanese number readings. Select a mode and make sure to
-        enter your answers in <span className="whitespace-nowrap">ひらがな</span>.
+      <ParagraphInfo className="px-8">
+        Quiz yourself on Japanese number readings. Select a mode and make sure
+        to enter your answers in{" "}
+        <span className="whitespace-nowrap">ひらがな</span>.
       </ParagraphInfo>
+      <HeadingSub className="p-8">Choose Mode</HeadingSub>
       {links.map((link) => (
         <Link key={link.url} href={link.url}>
           <a>
