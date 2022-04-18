@@ -1,13 +1,14 @@
 import React from "react"
 import { LayoutDefault } from "../components/layouts/LayoutDefault"
-import { ViewDateGame } from "../components/views/ViewDateGame"
-import { usePlayDates } from "../utils/hooks/usePlayDates"
-import { translateAge } from "../utils/translations/translateAge"
+import { ViewAgeGame } from "../components/views/ViewAgeGame"
+import { usePlayAge } from "../utils/hooks/usePlayAge"
 
 export default function Age() {
+  const states = usePlayAge()
+
   return (
     <LayoutDefault title="数える" hasBackToIndex>
-      <button onClick={() => console.log(translateAge(29))}>Click</button>
+      <ViewAgeGame {...states} />
     </LayoutDefault>
   )
 }
