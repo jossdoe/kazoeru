@@ -2,6 +2,7 @@ import React from "react"
 import Head from "next/head"
 import Link from "next/link"
 import { HiOutlineArrowNarrowLeft } from "react-icons/hi"
+import { AiFillGithub } from "react-icons/ai"
 
 type LayoutDefaultProps = {
   title: string
@@ -44,15 +45,13 @@ const LayoutDefault: React.FC<LayoutDefaultProps> = ({
         </header>
         <main className="py-12 px-4 max-w-md mx-auto">{children}</main>
         <footer className="text-center">
-          <div className="fixed bottom-0 left-0 right-0">
-            <a
-              className="inline-block mb-2 border-b-2 border-gray-400 text-sm"
-              href="https://github.com/jossdoe/kazoeru"
-              target="_blank"
-            >
-              GitHub
-            </a>
-          </div>
+          <a
+            className="inline-block mb-2text-gray-400 text-xl"
+            href="https://github.com/jossdoe/kazoeru"
+            target="_blank"
+          >
+            <AiFillGithub />
+          </a>
         </footer>
       </div>
     </div>
