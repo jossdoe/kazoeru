@@ -31,7 +31,7 @@ function ViewPureStart({ limit, setLimit, showNextNumber }: ViewPureStartProps) 
         </div>
       </div>
       <div className="text-center">
-        <Button variant="primary" onClick={() => showNextNumber()}>Go</Button>
+        <Button variant="primary" onClick={() => showNextNumber()}>Start</Button>
       </div>
     </>
   )

@@ -12,7 +12,6 @@ export default function Pure() {
     currentNumber,
     inputValue,
     limit,
-    resetGame,
     setInputValue,
     setLimit,
     showNextNumber,
@@ -40,7 +39,6 @@ export default function Pure() {
           currentKanas={currentKanas}
           currentNumber={currentNumber}
           inputValue={inputValue}
-          resetGame={resetGame}
           setInputValue={setInputValue}
           showNextNumber={showNextNumber}
           showResult={showResult}

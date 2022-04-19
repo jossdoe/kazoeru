@@ -8,7 +8,6 @@ type ViewPureGameProps = {
   currentKanas: string[]
   currentNumber: number
   inputValue: string
-  resetGame: () => void
   setInputValue: (value: string) => void
   showNextNumber: () => void
   showResult: () => void
@@ -19,7 +18,6 @@ function ViewPureGame({
   currentKanas,
   currentNumber,
   inputValue,
-  resetGame,
   setInputValue,
   showNextNumber,
   showResult,
@@ -58,9 +56,6 @@ function ViewPureGame({
             </div>
           )}
           <div className="mt-2">
-            <Button variant="secondary" className="mr-6" onClick={resetGame}>
-              Back
-            </Button>
             <Button variant="secondary" onClick={showNextNumber}>
               Next
             </Button>

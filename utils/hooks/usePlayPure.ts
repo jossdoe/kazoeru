@@ -10,13 +10,6 @@ function usePlayPure() {
   const [inputValue, setInputValue] = useState<string>('')
   const [limit, setLimit] = useState<number>(100)
 
-  const resetGame = () => {
-    setView('start')
-    setCurrentNumber(0)
-    setCurrentKanas([''])
-    setInputValue('')
-  }
-
   const showNextNumber = () => {
     const newNumber = Math.floor(Math.random() * limit)
     const newKana = translatePureNumber(newNumber)
@@ -37,7 +30,6 @@ function usePlayPure() {
     inputValue,
     limit,
     showNextNumber,
-    resetGame,
     setInputValue,
     setLimit,
     showResult,
