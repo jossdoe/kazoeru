@@ -11,6 +11,7 @@ import {
 import { IconType } from "react-icons"
 import { ParagraphInfo } from "../components/utils/ParagraphInfo"
 import { HeadingSub } from "../components/utils/HeadingSub"
+import { getRandomKaomoji } from "../utils/getRandomKaomoji"
 
 type LinkType = {
   url: string
@@ -44,14 +45,14 @@ const links: LinkType[] = [
 export default function Home() {
   return (
     <LayoutDefault title="数える">
-      <HeadingSub className="">Choose Mode</HeadingSub>
+      <HeadingSub className="">{getRandomKaomoji()}</HeadingSub>
       <ParagraphInfo className="p-8">
         Quiz yourself on Japanese number readings. Select a mode and make sure
         to enter your answers in{" "}
         <span className="whitespace-nowrap">ひらがな</span>.
       </ParagraphInfo>
       <div className="block mx-auto font-bold mb-6 text-center">
-      Choose Mode
+        Choose Mode
       </div>
       {links.map((link) => (
         <Link key={link.url} href={link.url}>
