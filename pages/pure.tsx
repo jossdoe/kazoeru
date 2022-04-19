@@ -23,7 +23,7 @@ export default function Pure() {
     <LayoutDefault title="数える" hasBackToIndex>
       {view === "start" && (
         <>
-          <HeadingSub>Counting Pure Numbers</HeadingSub>
+          <HeadingSub>Basic Numbers</HeadingSub>
           <ParagraphInfo className="p-8">
             Excercises will state a random number, the solution must be fully typed in hiragana. がんばってください！
           </ParagraphInfo>

@@ -21,7 +21,7 @@ type LinkType = {
 const links: LinkType[] = [
   {
     url: "/pure",
-    title: "Pure Numbers",
+    title: "Basic Numbers",
     Icon: HiOutlineHashtag,
   },
   {
@@ -44,16 +44,19 @@ const links: LinkType[] = [
 export default function Home() {
   return (
     <LayoutDefault title="数える">
-      <ParagraphInfo className="px-8">
+      <HeadingSub className="">Choose Mode</HeadingSub>
+      <ParagraphInfo className="p-8">
         Quiz yourself on Japanese number readings. Select a mode and make sure
         to enter your answers in{" "}
         <span className="whitespace-nowrap">ひらがな</span>.
       </ParagraphInfo>
-      <HeadingSub className="p-8">Choose Mode</HeadingSub>
+      <div className="block mx-auto font-bold mb-6 text-center">
+      Choose Mode
+      </div>
       {links.map((link) => (
         <Link key={link.url} href={link.url}>
           <a>
-            <div className="flex items-center bg-white py-4 px-8 rounded-md shadow-md mb-4">
+            <div className="flex items-center bg-white py-4 px-8 rounded-full shadow-md mb-4 hover:shadow-lg transition-all">
               <div className="mr-2">
                 <link.Icon />
               </div>
