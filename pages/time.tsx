@@ -16,7 +16,7 @@ export default function Time() {
         <>
           <HeadingSub>Telling The Time</HeadingSub>
           <ParagraphInfo className="p-8">
-            Exercises will give a time in 24h-format. Solutions can use either
+            Exercises will give a time in 24h-format, either full hours or half hours. Solutions can use either
             the 12h-system with ごぜん and ごご or the 24h-system.
             がんばってください！
           </ParagraphInfo>
