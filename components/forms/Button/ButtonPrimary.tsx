@@ -7,7 +7,7 @@ function ButtonPrimary(props: ButtonPrimaryProps) {
 
   return (
     <button
-      className={`bg-red-400 hover:bg-red-500 text-white font-medium rounded-lg w-32 py-4 shadow-md ${className}`}
+      className={`bg-red-400 hover:bg-red-500 text-white ${className}`}
       {...rest}
     />
   )

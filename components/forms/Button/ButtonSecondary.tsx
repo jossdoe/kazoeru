@@ -8,7 +8,7 @@ function ButtonSecondary(props: ButtonSecondaryProps) {
 
   return (
     <button
-      className={`bg-gray-700 text-gray-50 py-4 px-6 rounded-lg shadow-md mt-4 ${className}`}
+      className={`bg-gray-700 text-gray-50 ${className}`}
       {...rest}
     />
   )
