@@ -21,27 +21,29 @@ const LayoutDefault: React.FC<LayoutDefaultProps> = ({
           <title>{title}</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <header className="flex bg-white p-4 text-center">
-          <div className="flex-1 flex justify-start items-center">
-            {hasBackToIndex && (
+        <header className="bg-white p-4">
+          <div className="flex max-w-2xl mx-auto text-center">
+            <div className="flex-1 flex justify-start items-center">
+              {hasBackToIndex && (
+                <Link href="/">
+                  <a className="flex items-center font-bold text-gray-600">
+                    <HiOutlineArrowNarrowLeft />
+                    <div className="ml-2">Home</div>
+                  </a>
+                </Link>
+              )}
+            </div>
+            <div>
               <Link href="/">
-                <a className="flex items-center font-bold text-gray-600">
-                  <HiOutlineArrowNarrowLeft />
-                  <div className="ml-2">Home</div>
+                <a>
+                  <div className="bg-red-500 inline-flex text-white w-10 h-10 rounded-full items-center justify-center">
+                    数
+                  </div>
                 </a>
               </Link>
-            )}
+            </div>
+            <div className="flex-1"> </div>
           </div>
-          <div>
-            <Link href="/">
-              <a>
-                <div className="bg-red-500 inline-flex text-white w-10 h-10 rounded-full items-center justify-center">
-                  数
-                </div>
-              </a>
-            </Link>
-          </div>
-          <div className="flex-1"> </div>
         </header>
         <main className="py-12 px-4 max-w-md mx-auto">{children}</main>
         <footer className="text-center">
