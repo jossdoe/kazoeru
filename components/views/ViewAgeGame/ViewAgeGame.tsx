@@ -2,6 +2,7 @@ import React from "react"
 import { Button } from "../../forms/Button"
 import { InputText } from "../../forms/InputText"
 import type { View } from "../../../utils/hooks/usePlayAge"
+import { HiOutlineCheckCircle, HiOutlineXCircle } from "react-icons/hi"
 
 type ViewAgeGameProps = {
   currentAge: number
@@ -33,9 +34,7 @@ function ViewAgeGame({
 
   return (
     <form className="text-center" onSubmit={onSubmitHandler}>
-      <h2 className="text-4xl font-bold mb-6">
-        {`${currentAge} years old`}
-      </h2>
+      <h2 className="text-4xl font-bold mb-6">{`${currentAge} years old`}</h2>
       <InputText
         label="Enter Hiragana"
         state={view === "result" ? inputState : "default"}
@@ -47,10 +46,18 @@ function ViewAgeGame({
       {view === "enter" && <Button variant="secondary">Show Result</Button>}
       {view === "result" && (
         <>
-          {isCorrectAnswer && <div className="mb-2 font-bold">Correct!</div>}
+          {isCorrectAnswer && (
+            <div className="mb-2 flex-inline items-center">
+              <HiOutlineCheckCircle className="relative -top-0.5 inline-block mr-2" />
+              <span className="font-bold">Correct!</span>
+            </div>
+          )}
           {!isCorrectAnswer && (
             <div className="mb-6">
-              <div className="mb-2 font-bold">Incorrect!</div>
+              <div className="mb-2 flex-inline items-center">
+                <HiOutlineXCircle className="relative -top-0.5 inline-block mr-2" />
+                <span className="font-bold">False</span>
+              </div>
               <div>{currentKanas[0]}</div>
             </div>
           )}
