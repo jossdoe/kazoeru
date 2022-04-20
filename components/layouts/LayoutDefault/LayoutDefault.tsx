@@ -1,6 +1,7 @@
 import React from "react"
 import Head from "next/head"
 import Link from "next/link"
+import Image from "next/image"
 import { HiOutlineArrowNarrowLeft } from "react-icons/hi"
 import { AiFillGithub } from "react-icons/ai"
 
@@ -21,7 +22,7 @@ const LayoutDefault: React.FC<LayoutDefaultProps> = ({
           <title>{title}</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <header className="bg-white p-4">
+        <header className="bg-white px-4">
           <div className="flex max-w-2xl mx-auto text-center">
             <div className="flex-1 flex justify-start items-center">
               {hasBackToIndex && (
@@ -33,12 +34,13 @@ const LayoutDefault: React.FC<LayoutDefaultProps> = ({
                 </Link>
               )}
             </div>
-            <div>
+            <div className="pt-2">
               <Link href="/">
                 <a>
-                  <div className="bg-red-500 inline-flex text-white w-10 h-10 rounded-full items-center justify-center">
+                  <Image src="/logo-100.png" alt="me" width="50" height="50" />
+                  {/* <div className="bg-red-500 inline-flex text-white w-10 h-10 rounded-full items-center justify-center">
                     数
-                  </div>
+                  </div> */}
                 </a>
               </Link>
             </div>
