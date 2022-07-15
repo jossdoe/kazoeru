@@ -1,73 +1,43 @@
-import React from "react"
-import Link from "next/link"
+import React, { useState, useEffect } from "react"
 import { LayoutDefault } from "../components/layouts/LayoutDefault"
-import {
-  HiOutlineHashtag,
-  HiOutlineCalendar,
-  HiOutlineClock,
-  HiArrowCircleRight,
-  HiOutlineUser,
-} from "react-icons/hi"
-import { IconType } from "react-icons"
-import { ParagraphInfo } from "../components/utils/ParagraphInfo"
-import { HeadingSub } from "../components/utils/HeadingSub"
+import { ParagraphInfo } from "../components/atoms/ParagraphInfo"
+import { HeadingSub } from "../components/atoms/HeadingSub"
+import { CtaTitle } from "../components/atoms/CtaTitle"
+import { CtaLink } from "../components/molecules/CtaLink"
 import { getRandomKaomoji } from "../utils/getRandomKaomoji"
 
-type LinkType = {
-  url: string
-  title: string
-  Icon: IconType
-}
+import { content } from "../data/index-content"
+import { data } from "../data/index-data"
 
-const links: LinkType[] = [
-  {
-    url: "/pure",
-    title: "Basic Numbers",
-    Icon: HiOutlineHashtag,
-  },
-  {
-    url: "/dates",
-    title: "Dates",
-    Icon: HiOutlineCalendar,
-  },
-  {
-    url: "/time",
-    title: "Time",
-    Icon: HiOutlineClock,
-  },
-  {
-    url: "/age",
-    title: "Age",
-    Icon: HiOutlineUser,
-  },
-]
+export default function Index() {
+  const [isKaomojiVisible, setIsKaomojiVisible] = useState(true)
+  const [kaomoji, setKaomoji] = useState("٩(｡•́‿•̀｡)۶")
 
-export default function Home() {
+  const kaomojiOpacity = isKaomojiVisible ? "opacity-100" : "opacity-0"
+
+  useEffect(() => {
+    const interval = setInterval(async () => {
+      setIsKaomojiVisible(false)
+      await new Promise((r) => setTimeout(r, 1000))
+      setKaomoji(getRandomKaomoji(kaomoji))
+      setIsKaomojiVisible(true)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <LayoutDefault title="数える">
-      <HeadingSub className="">{getRandomKaomoji()}</HeadingSub>
-      <ParagraphInfo className="p-8">
-        Quiz yourself on Japanese number readings. Select a mode and make sure
-        to enter your answers in{" "}
-        <span className="whitespace-nowrap">ひらがな</span>.
-      </ParagraphInfo>
-      <div className="block mx-auto font-bold mb-6 text-center">
-        Choose Mode
-      </div>
-      {links.map((link) => (
-        <Link key={link.url} href={link.url}>
-          <a>
-            <div className="flex items-center bg-white py-4 px-8 rounded-full shadow-md mb-4 hover:shadow-lg transition-all">
-              <div className="mr-2">
-                <link.Icon />
-              </div>
-              <div className="flex-1 text-left">{link.title}</div>
-              <div className="text-gray-500">
-                <HiArrowCircleRight />
-              </div>
-            </div>
-          </a>
-        </Link>
+      <HeadingSub
+        className={`transition-opacity duration-500 ${kaomojiOpacity}`}
+      >
+        {kaomoji}
+      </HeadingSub>
+      <ParagraphInfo className="p-8">{content.description}</ParagraphInfo>
+      <CtaTitle>{content.cta}</CtaTitle>
+      {data.links.map((link) => (
+        <CtaLink key={link.url} url={link.url} Icon={link.Icon}>
+          {link.title}
+        </CtaLink>
       ))}
     </LayoutDefault>
   )

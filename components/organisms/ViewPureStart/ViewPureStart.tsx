@@ -1,5 +1,5 @@
 import React from "react"
-import { Button } from "../../forms/Button"
+import { Button } from "../../molecules/Button"
 import { addPeriodSeperator } from "../../../utils/addPeriodSeperator"
 
 type ViewPureStartProps = {

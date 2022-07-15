@@ -1,6 +1,6 @@
 import React from "react"
-import { Button } from "../../forms/Button"
-import { InputText } from "../../forms/InputText"
+import { Button } from "../../molecules/Button"
+import { InputText } from "../../molecules/InputText"
 import { addPeriodSeperator } from "../../../utils/addPeriodSeperator"
 import type { View } from "../../../utils/hooks/usePlayPure"
 import { HiOutlineCheckCircle, HiOutlineXCircle } from "react-icons/hi"

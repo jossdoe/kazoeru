@@ -1,9 +1,9 @@
 import React from "react"
-import { Button } from "../components/forms/Button"
+import { Button } from "../components/molecules/Button"
 import { LayoutDefault } from "../components/layouts/LayoutDefault"
-import { HeadingSub } from "../components/utils/HeadingSub"
-import { ParagraphInfo } from "../components/utils/ParagraphInfo"
-import { ViewDateGame } from "../components/views/ViewDateGame"
+import { HeadingSub } from "../components/atoms/HeadingSub"
+import { ParagraphInfo } from "../components/atoms/ParagraphInfo"
+import { ViewDateGame } from "../components/organisms/ViewDateGame"
 import { usePlayDates } from "../utils/hooks/usePlayDates"
 
 export default function Dates() {
