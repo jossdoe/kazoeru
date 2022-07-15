@@ -1,10 +1,10 @@
 import React from "react"
 import { LayoutDefault } from "../components/layouts/LayoutDefault"
 import { usePlayPure } from "../utils/hooks/usePlayPure"
-import { ViewPureStart } from "../components/views/ViewPureStart"
-import { ViewPureGame } from "../components/views/ViewPureGame"
-import { HeadingSub } from "../components/utils/HeadingSub"
-import { ParagraphInfo } from "../components/utils/ParagraphInfo"
+import { ViewPureStart } from "../components/organisms/ViewPureStart"
+import { ViewPureGame } from "../components/organisms/ViewPureGame"
+import { HeadingSub } from "../components/atoms/HeadingSub"
+import { ParagraphInfo } from "../components/atoms/ParagraphInfo"
 
 export default function Pure() {
   const {

@@ -1,6 +1,6 @@
 import React from "react"
-import { Button } from "../../forms/Button"
-import { InputText } from "../../forms/InputText"
+import { Button } from "../../molecules/Button"
+import { InputText } from "../../molecules/InputText"
 import type { View } from "../../../utils/hooks/usePlayAge"
 import { HiOutlineCheckCircle, HiOutlineXCircle } from "react-icons/hi"
 

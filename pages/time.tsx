@@ -1,9 +1,9 @@
 import React from "react"
-import { Button } from "../components/forms/Button"
+import { Button } from "../components/molecules/Button"
 import { LayoutDefault } from "../components/layouts/LayoutDefault"
-import { HeadingSub } from "../components/utils/HeadingSub"
-import { ParagraphInfo } from "../components/utils/ParagraphInfo"
-import { ViewTimeGame } from "../components/views/ViewTimeGame"
+import { HeadingSub } from "../components/atoms/HeadingSub"
+import { ParagraphInfo } from "../components/atoms/ParagraphInfo"
+import { ViewTimeGame } from "../components/organisms/ViewTimeGame"
 import { usePlayTime } from "../utils/hooks/usePlayTime"
 
 export default function Time() {

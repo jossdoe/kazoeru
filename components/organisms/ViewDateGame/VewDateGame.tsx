@@ -1,47 +1,44 @@
 import React from "react"
-import { Button } from "../../forms/Button"
-import { InputText } from "../../forms/InputText"
-import type { View } from "../../../utils/hooks/usePlayPure"
+import { Button } from "../../molecules/Button"
+import { InputText } from "../../molecules/InputText"
+import { getMonthInEnglish } from "../../../utils/getMonthInEnglish"
+import type { View } from "../../../utils/hooks/usePlayDates"
 import { HiOutlineCheckCircle, HiOutlineXCircle } from "react-icons/hi"
 
-type ViewTimeGameProps = {
-  currentHour: number
-  currentKanas: string[]
-  currentMinutes: number
+type ViewDateGameProps = {
+  currentKana: string
+  currentMonth: number
+  currentDay: number
   inputValue: string
   setInputValue: (value: string) => void
-  showNextTime: () => void
+  showNextDate: () => void
   showResult: () => void
   view: View
 }
 
-function ViewTimeGame({
-  currentHour,
-  currentKanas,
-  currentMinutes,
+function ViewDateGame({
+  currentKana,
+  currentMonth,
+  currentDay,
   inputValue,
   setInputValue,
-  showNextTime,
+  showNextDate,
   showResult,
   view,
-}: ViewTimeGameProps) {
-  const isCorrectAnswer = currentKanas.includes(inputValue.trim())
+}: ViewDateGameProps) {
+  const isCorrectAnswer = currentKana === inputValue.trim()
   const inputState = isCorrectAnswer ? "correct" : "incorrect"
-
-  const twoDigitHour = currentHour < 10 ? `0${currentHour}` : currentHour
-  const twoDigitMinutes =
-    currentMinutes < 10 ? `0${currentMinutes}` : currentMinutes
 
   const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     if (view === "enter") showResult()
-    if (view === "result") showNextTime()
+    if (view === "result") showNextDate()
   }
 
   return (
     <form className="text-center" onSubmit={onSubmitHandler}>
       <h2 className="text-4xl font-bold mb-6">
-        {`${twoDigitHour}:${twoDigitMinutes}`}
+        {`${getMonthInEnglish(currentMonth)} ${currentDay}`}
       </h2>
       <InputText
         label="Enter Hiragana"
@@ -66,16 +63,11 @@ function ViewTimeGame({
                 <HiOutlineXCircle className="relative -top-0.5 inline-block mr-2" />
                 <span className="font-bold">False</span>
               </div>
-              {currentKanas.map((kana, idx) => (
-                <div key={kana}>
-                  {idx > 0 && <div>or</div>}
-                  {kana}
-                </div>
-              ))}
+              <div>{currentKana}</div>
             </div>
           )}
           <div className="mt-2">
-            <Button variant="secondary" onClick={showNextTime}>
+            <Button variant="secondary" onClick={showNextDate}>
               Next
             </Button>
           </div>
@@ -85,4 +77,4 @@ function ViewTimeGame({
   )
 }
 
-export { ViewTimeGame }
+export { ViewDateGame }
