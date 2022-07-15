@@ -15,8 +15,11 @@ const kaomoji: string[] = [
   '|ω･)ﾉ',
 ]
 
-function getRandomKaomoji() {
-  return kaomoji[Math.floor(Math.random() * kaomoji.length)]
+function getRandomKaomoji(current?: string) {
+  const newKaomoji = kaomoji[Math.floor(Math.random() * kaomoji.length)]
+
+  if (current === newKaomoji) return getRandomKaomoji(newKaomoji)
+  return newKaomoji
 }
 
 export { getRandomKaomoji }
