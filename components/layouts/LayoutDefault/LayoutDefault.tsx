@@ -38,9 +38,6 @@ const LayoutDefault: React.FC<LayoutDefaultProps> = ({
               <Link href="/">
                 <a>
                   <Image src="/logo-100.png" alt="me" width="50" height="50" />
-                  {/* <div className="bg-red-500 inline-flex text-white w-10 h-10 rounded-full items-center justify-center">
-                    数
-                  </div> */}
                 </a>
               </Link>
             </div>
