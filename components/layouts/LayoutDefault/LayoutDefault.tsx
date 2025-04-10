@@ -1,9 +1,9 @@
-import React from "react"
-import Head from "next/head"
-import Link from "next/link"
-import Image from "next/image"
-import { HiOutlineArrowNarrowLeft } from "react-icons/hi"
-import { AiFillGithub } from "react-icons/ai"
+import React from 'react'
+import Head from 'next/head'
+import Link from 'next/link'
+import Image from 'next/image'
+import { HiOutlineArrowNarrowLeft } from 'react-icons/hi'
+import { AiFillGithub } from 'react-icons/ai'
 
 type LayoutDefaultProps = {
   title: string
@@ -13,7 +13,7 @@ type LayoutDefaultProps = {
 const LayoutDefault: React.FC<LayoutDefaultProps> = ({
   title,
   children,
-  hasBackToIndex,
+  hasBackToIndex
 }) => {
   return (
     <div className="bg-gray-100 min-h-screen">
@@ -45,13 +45,14 @@ const LayoutDefault: React.FC<LayoutDefaultProps> = ({
           </div>
         </header>
         <main className="py-12 px-4 max-w-md mx-auto">{children}</main>
-        <footer className="text-center">
+        <footer className="text-center text-xs">
+          <span className="mr-2 text-gray-400">© 2021 - 2025</span>
           <a
-            className="inline-block mb-2text-gray-400 text-xl"
-            href="https://github.com/jossdoe/kazoeru"
+            className="text-gray-600 underline"
+            href="https://joss-doebler.de"
             target="_blank"
           >
-            <AiFillGithub />
+            Joss Doebler
           </a>
         </footer>
       </div>
